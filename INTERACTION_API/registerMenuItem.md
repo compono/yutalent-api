@@ -2,7 +2,11 @@
 ===
 
 Adds a new menu item to the specified `$menuName` menu.  
-We currently support only `settings` menu - menu in the top-right corner of the WU service (account settings menu).
+We currently support:
+
+`settings` menu - menu in the top-right corner of the WU service (account settings menu).
+
+`topnav` menu - big horizontal menu in the very top of WU (where Home/Projects/Contacts links are).
 
 `$menuItemTitle` - title of the menu item
 
