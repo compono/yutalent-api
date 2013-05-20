@@ -1,13 +1,35 @@
-\WU_API::showPopup( $title, $frameUrl, $params = array() )
+\WU_API::showPopup( $pageClass, $params = array() )
 ===
 
-Shows a popup box with the given `$title` and content from `$frameUrl`.  
+Shows a popup box with the given `$pageClass` page inside.
 If `$params` is not empty then it will be send in `$_POST['signedRequest']` variable to the destination frame and in that frame can be accessed using PHP or JS API.
 
 Example:
 
 ```
 <?php
+class menuPopup
+{
+	protected $frameUrl = 'http://google.com';
+	protected $title = 'Googlepup';
 
-\WU_API::showPopup( 'My first popup!', 'http://google.com', array( 'foo' => 'bar' ) );
+	public function getFrameUrl() {
+		return $this->frameUrl;
+	}
+
+	public function getTitle() {
+		return $this->title;
+	}
+}
+
+class menuClass
+{
+	public function clickAction()
+	{
+		\WU_API::showPopup('menuPopup', array( 'foo' => 'bar' ));
+	}
+}
+
+\WU_API::registerMenuItem('settings', 'menuClass', 'Show popup!');
+\WU_API::registerPopup('menuPopup');
 ```
