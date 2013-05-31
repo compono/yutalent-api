@@ -1,9 +1,9 @@
 Javascript API
 ===
-WU:Talent also supports JS API.  
-This is the API which you can use in front-end.
+wu:talent also supports a JS API. This is the API which you can use in all your front-end work.
 
-To use the API you have to include in the header latest jQuery library.  
+To use this API you have to include the latest jQuery library in the header.  
+
 Then you need to include at the bottom the following code:
 
 ```
