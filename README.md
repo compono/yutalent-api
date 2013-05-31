@@ -3,15 +3,9 @@ wu:talent API Documentation
 
 wu:talent has a rich API feature set that works in conjunction with the Developer Framework to allow you to develop private and public plugins and applications to work inside and/or talk to the wu:talent system.  
 
-Integrate your plugin into any area of wu:talent, listen for events and communicate interactively with the service.
+Integrate your plugin into any area of wu:talent, listen for events and communicate interactively with the service. You have 3 API's to play with:
 
-We have 3 key API's:
-
-*  Interaction API
-*  Javascript API
-*  RESTful API
-
-## Interaction API
+[## Interaction API](https://github.com/oneworldmarket/wutalent-api/tree/master/INTERACTION_API)
 This is used to register plugin triggers and hooks in the service. You can use it to append a new menu item, to show settings pages, to output debug infofrmation or to call a popup window.
 
 ## Javascript API
