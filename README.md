@@ -1,10 +1,11 @@
-WU:Talent API Documentation
+wu:talent API Documentation
 ===
 
-WU:Talent has a rich API feature set.  
-It allows you to integrate your plugin into all parts of WU, to listen for events and to interactively communicate
-with the service.  
-Our APIs include:
+wu:talent has a rich API feature set that works in conjunction with the Developer Framework to allow you to develop private and public plugins and applications to work inside and/or talk to the wu:talent system.  
+
+Integrate your plugin into any area of wu:talent, listen for events and communicate interactively with the service.
+
+We have 3 key API's:
 
 *  Interaction API
 *  Javascript API
