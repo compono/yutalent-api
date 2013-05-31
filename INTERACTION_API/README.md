@@ -6,7 +6,7 @@ You can use it to append a new menu item, to show settings pages, to output debu
 
 The Interaction API can be used in the code which you write on your application configuration page: [http://wutalent.co.uk/c/developer/configure/id/xxxx][1]
 
-The configuration is split into 3 areas:
+The configuration for plugins added to wu:talent are split into 3 areas:
 
  *   Descriptive information (icon for app, text and screenshots for website, etc)
  *   Initialization Code
