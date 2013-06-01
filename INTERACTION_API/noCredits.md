@@ -1,11 +1,11 @@
 \WU_API::noCredits( $requiredCredits = null, $availableCredits = null )
 ===
 
-Show standard WU popup which will say that user has not enough credits.
+Show standard wu:talent popup which will inform user they do not have enough credit for requested action.
 
-If `$requiredCredits` provided - it will add text: "Required amount of credits is: ..."
+If `$requiredCredits` is provided - it will add text: "Required amount of credits is: ..."
 
-If `$availableCredits` provided - it will add text: "You have ... credits"
+If `$availableCredits` is provided - it will add text: "You have ... credits"
 
 Example:
 
