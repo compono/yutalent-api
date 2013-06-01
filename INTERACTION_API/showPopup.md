@@ -2,7 +2,8 @@
 ===
 
 Shows a popup box with the given `$pageClass` page inside.
-If `$params` is not empty then it will be send in `$_POST['signedRequest']` variable to the destination frame and in that frame can be accessed using PHP or JS API.
+
+If `$params` are not empty then it will be send in the `$_POST['signedRequest']` variable to the destination frame - that frame can then be accessed using the PHP or JS API's.
 
 Example:
 
