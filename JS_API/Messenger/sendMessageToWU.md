@@ -1,6 +1,6 @@
 sendMessageToWU( method, params, callBack )
 ==
-This sends a request to the REST API using given method, params and response is returned back into callback function.
+This sends a request to the REST API using given method, params. The response is returned back in the callback function.
 
 `method` - method from REST API
 `params` - params specific for the method
