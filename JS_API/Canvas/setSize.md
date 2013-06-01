@@ -1,6 +1,6 @@
 setSize( height )
 ===
-Sets height of the iframe where your page is loaded.
+Sets height of the iframe in which your page is loaded.
 
 Values:
 
