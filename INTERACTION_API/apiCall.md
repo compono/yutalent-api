@@ -1,7 +1,7 @@
 \WU_API::apiCall( $method, $params )
 ===
 
-That's a call to REST API. For the complete list of `$method`s and `$params` please read the REST API documentation.
+A call to the REST API. For the complete list of `$method`s and `$params` please read the [REST API](https://github.com/oneworldmarket/wutalent-api/tree/master/REST_API) documentation.
 
 Example:
 

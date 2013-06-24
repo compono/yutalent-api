@@ -1,7 +1,8 @@
 \WU_API::registerMenuItem( $menuName, $className, $menuItemTitle )
 ===
 
-Adds a new menu item to the specified `$menuName` menu.  
+Adds a new menu item to the specified `$menuName` menu. 
+
 We currently support:
 
 `settings` menu - menu in the top-right corner of the WU service (account settings menu).
