@@ -22,4 +22,4 @@ This API is based on OAuth2.0 authentication mechanism - to communicate with the
 We only went live recently, and while we think our Developer Framework rocks, we want your feedback and ideas. Please let us know what you think and how we can improve?
 
 ## How to get support
-We provide support for our API's and the Developer Framework in the [issues area of this repository](https://github.com/oneworldmarket/wutalent-api/issues?labels=bug&state=open).
+We provide support for our API's and the Developer Framework in the [issues area of this repository](https://github.com/oneworldmarket/wutalent-api/issues?labels=&page=1&state=closed).
