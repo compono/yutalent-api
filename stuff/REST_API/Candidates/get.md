@@ -14,7 +14,7 @@ var_export( $data );
 Restful call from JS API:
 ```
 var data = wu.sendMessageToWU( 'candidates/get'. {id: 123} );
-console.log( data );
+console.log( data ); //output to firebug console
 ```
 
 Restful call from Interaction API
