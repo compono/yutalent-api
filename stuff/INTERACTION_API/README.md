@@ -16,4 +16,14 @@ The configuration for plugins added to wu:talent are split into 3 areas:
 
 **Pages Code** - executed only when user accesses a specific page. If you want to add a sidebar to the People contact section on the right hand side - this is the place to put the code.
 
+*IMPORTANT BIT*
+
+When you build forms ( <form> tag ), be sure to include the following inside form:
+
+```
+<input type="hidden" name="signed_request" value="<?php print $_REQUEST['signed_request'] ?>"/>
+```
+
+this is needed for interaction with API. If you didnt include it - after posting the form your script will be unable to interact with our api.
+
 [1]: http://wutalent.co.uk/c/developer
