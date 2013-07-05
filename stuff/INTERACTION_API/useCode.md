@@ -12,5 +12,5 @@ Example:
 ```
 <?php
 
-\WU_API::include( 'people/profile-notes' );
+\WU_API::useCode( 'people/profile-notes' );
 ```
