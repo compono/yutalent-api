@@ -11,6 +11,8 @@ class WU_API
     protected $_request;
     protected $_params;
 
+    protected $_domain;
+
     protected $_oauth;
 
     public function __construct()
@@ -29,21 +31,28 @@ class WU_API
             $this->_token = $data['token'];
             $this->_request = $data['request'];
             $this->_params = $_POST + $data['params'];
+
+            $this->_domain = $data['protocol'] . '://' . $data['domain'];
+
+            if( defined('WU_DOMAIN') && !$this->_domain )
+            {
+                $this->_domain = WU_DOMAIN;
+            }
         }
 
         $this->_oauth = new oauth_client_class();
 
         $this->_oauth->offline = true;
-        $this->_oauth->request_token_url = WU_DOMAIN . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
-        $this->_oauth->dialog_url = WU_DOMAIN . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
+        $this->_oauth->request_token_url = $this->_domain . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
+        $this->_oauth->dialog_url = $this->_domain . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
 
-        $this->_oauth->access_token_url = WU_DOMAIN . '/c/oauth/access_token';
+        $this->_oauth->access_token_url = $this->_domain . '/c/oauth/access_token';
 
         $this->_oauth->debug = true;
         $this->_oauth->debug_http = true;
         $this->_oauth->server = '';
 
-        $this->_oauth->redirect_uri = WU_DOMAIN . $_SERVER['REQUEST_URI'];
+        $this->_oauth->redirect_uri = $this->_domain . $_SERVER['REQUEST_URI'];
 
         $this->_oauth->client_id = WU_ID;
         $this->_oauth->client_secret = WU_SECRET;
@@ -75,7 +84,7 @@ class WU_API
         $this->_oauth->client_secret = $secret;
     }
 
-    protected function parseSignedRequest()
+    public static function parseSignedRequest()
     {
         if( isset($_POST['signed_request']) )
         {
@@ -113,7 +122,7 @@ class WU_API
         if( $success )
         {
             $success = $this->_oauth->CallAPI(
-                WU_DOMAIN . '/c/oauth/v1?' . http_build_query($params),
+                $this->_domain . '/c/oauth/v1?' . http_build_query($params),
                 'GET', array(), array('FailOnAccessError'=>true), $response);
 
             if( !$success )
