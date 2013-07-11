@@ -12,5 +12,5 @@ Example:
 
 ```
 //JS API
-wu.Messenger.sendMessageToWU('notes/add', {"message":"Hello World from WU API!"});
+wu.Messenger.sendMessageToWU('notes/add', {"candidate_id":1234,"message":"Hello World from WU API!"});
 ```
