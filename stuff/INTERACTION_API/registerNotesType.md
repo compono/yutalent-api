@@ -1,7 +1,7 @@
 \WU_API::registerNotesType( $type, $options )
 ===
 
-Registers a custom notes type which your plugin will be using. This function should be called in initialization area.
+Registers a custom notes type your plugin uses. This function should be called in the initialization area.
 
 Parameters:
 
