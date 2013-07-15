@@ -12,6 +12,7 @@ There are some special non-restful `method`s which you can send to WU:
  * `showGrowl` - shows a growl popup with title and message: `wu.Messenger.sendMessageToWU('showGrowl', {title:'title',message:'message'});`
  * `closePopup` - closes current popup window (in which the JS code runs)
  * `refresh` - reloads wu window
+ * `event/<method>` - calls <method>Action function from Interaction API of the active class.
 
 Example:
 
@@ -19,6 +20,16 @@ Example:
 <script>
 wu.Messenger.sendMessageToWU('user/profile', {}, function(response){
                 alert( response.user );
+            });
+</script>
+```
+
+Calling `customAction` function from your interaction class:
+
+```
+<script>
+wu.Messenger.sendMessageToWU('event/custom', {}, function(response){
+                console.log( response );
             });
 </script>
 ```
