@@ -9,11 +9,12 @@ Currently listener support these types:
  * `profile` - changes in profile record
  * `candidate` - changes in candidate record
 
-Listener class consists of one function: `onChange( $type, $newData, $modifiedFields)`
+Listener class consists of one function: `onChange( $type, $newData, $modifiedFields, $oldFields)`
 
  * `$type` - type of record which changed (`profile` or `candidate`)
  * `$newData` - new record data. This data is very raw. To see what data is returned, use the example given at bottom of this document
- * `$modifiedFields` - array of fields which were modified for the given record (its again about raw data)
+ * `$modifiedFields` - associative array of fields which were modified for the given record (its again about raw data)
+ * `$oldFields` - associative array of old values of modified fields
 
 As this listener listens for object events and not related to pages - it has to be put in init code of plugin in the development area.
 
@@ -26,7 +27,7 @@ Example:
 //
 class listenerClass
 {
-    public function onChange( $type, $newData, $modifiedFields )
+    public function onChange( $type, $newData, $modifiedFields, $oldFields )
     {
         if( $type == 'candidate')
         {
@@ -38,10 +39,24 @@ class listenerClass
                 'maxredirects' => 0,
                 'timeout'      => 30));
 
+            /* do something only if status was changed */
+            /*
+
+            if( isset( $modifiedFields['Status'] ) || isset( $modifiedFields['StatusExtra'] ) )
+            {
+                //get new candidate data
+                $candidate = \WU_API::apiCall('candidates/get', array('id' => $newData['id']));
+
+                //do something with candidate
+            }
+
+            */
+
             $client->setParameterPost(array(
                 'type'  => $type,
                 'newData'   => $newData,
                 'modifiedFields' => $modifiedFields,
+                'oldFields' => $oldFields,
                 '_debug_email' => '<put in here your email address>' // put in here your email address to get the debug info
             ));
 
