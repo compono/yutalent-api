@@ -6,8 +6,8 @@ This hook works when record is updated in database, which means that there is no
 
 Currently listener support these types:
 
- * `profile` - changes in profile record
- * `candidate` - changes in candidate record
+ * `user_profile` - changes in user profile record
+ * `contact_record` - changes in contact record
 
 Listener class consists of one function: `onChange( $type, $newData, $modifiedFields, $oldFields)`
 
@@ -29,7 +29,7 @@ class listenerClass
 {
     public function onChange( $type, $newData, $modifiedFields, $oldFields )
     {
-        if( $type == 'candidate')
+        if( $type == 'contact_record')
         {
             $host = ((isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on")?'https':'http') . '://' . $_SERVER['HTTP_HOST'];
 
@@ -45,7 +45,7 @@ class listenerClass
             if( isset( $modifiedFields['Status'] ) || isset( $modifiedFields['StatusExtra'] ) )
             {
                 //get new candidate data
-                $candidate = \WU_API::apiCall('candidates/get', array('id' => $newData['id']));
+                $candidate = \WU_API::apiCall('contacts/get', array('id' => $newData['id']));
 
                 //do something with candidate
             }
