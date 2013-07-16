@@ -2,7 +2,8 @@
 ===
 
 Registers a listener which listens for object changes.
-This hook works when record is updated in database, which means that there is no interface and no interaction with the user.
+
+This hook works when a record is updated in database, which means that there is no interface and no interaction with the user.
 
 Currently listener support these types:
 
@@ -12,11 +13,11 @@ Currently listener support these types:
 Listener class consists of one function: `onChange( $type, $newData, $modifiedFields, $oldFields)`
 
  * `$type` - type of record which changed (`profile` or `candidate`)
- * `$newData` - new record data. This data is very raw. To see what data is returned, use the example given at bottom of this document
- * `$modifiedFields` - associative array of fields which were modified for the given record (its again about raw data)
+ * `$newData` - new record data. This data is very raw. To check the data that gets returned, use the example given at bottom of this document
+ * `$modifiedFields` - associative array of fields which were modified for the given record (again it's raw data)
  * `$oldFields` - associative array of old values of modified fields
 
-As this listener listens for object events and not related to pages - it has to be put in init code of plugin in the development area.
+As this listener listens for object events and is not related to pages - it has to be put in the init code of the plugin.
 
 Example:
 
