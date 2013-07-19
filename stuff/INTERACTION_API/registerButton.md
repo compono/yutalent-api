@@ -5,7 +5,9 @@ Registers a plugin button in the specified position.
 
 Parameters:
 
-`$position` - sets the position, where button should be drawn. Currently we support only `header` as a position value.
+`$position` - sets the position, where button should be drawn. Currently we support:
+ * `header` - page header
+ * `content_top_right` - top right corner of content area
 
 `$buttonClass` - class, which is responsible for the button behaviour. Can contain 3 methods:
 
