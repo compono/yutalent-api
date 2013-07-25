@@ -33,18 +33,19 @@ class WU_API
             $this->_params = $_POST + $data['params'];
 
             $this->_domain = $data['protocol'] . '://' . $data['domain'];
+        }
 
-            if( defined('WU_DOMAIN') && !$this->_domain )
-            {
-                $this->_domain = WU_DOMAIN;
-            }
+        if( defined('WU_DOMAIN') && !$this->_domain )
+        {
+            $this->_domain = WU_DOMAIN;
         }
 
         $this->_oauth = new oauth_client_class();
 
         $this->_oauth->offline = true;
-        $this->_oauth->request_token_url = $this->_domain . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
-        $this->_oauth->dialog_url = $this->_domain . '/c/oauth/authorize?client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
+
+        $this->setRequestTokenUrl();
+        $this->setDialogUrl();
 
         $this->_oauth->access_token_url = $this->_domain . '/c/oauth/access_token';
 
@@ -53,6 +54,11 @@ class WU_API
         $this->_oauth->server = '';
 
         $this->_oauth->redirect_uri = $this->_domain . $_SERVER['REQUEST_URI'];
+        if( isset($_POST['signed_request']) )
+        {
+            $this->_oauth->redirect_uri .= (strpos($this->_oauth->redirect_uri, '?') === false?'?':'&') . 'signed_request=';
+            $this->_oauth->redirect_uri .= $_POST['signed_request'];
+        }
 
         $this->_oauth->client_id = WU_ID;
         $this->_oauth->client_secret = WU_SECRET;
@@ -62,6 +68,36 @@ class WU_API
         $this->_oauth->session_started = true;
 
         $this->_oauth->Initialize();
+    }
+
+    public function setRequestTokenUrl( $account_id = null )
+    {
+        $this->_oauth->request_token_url = $this->_domain . '/c/oauth/authorize?';
+
+        if( $account_id )
+        {
+            $this->_oauth->request_token_url .= 'user_id=' . intval($account_id) . '&';
+        }
+
+        $this->_oauth->request_token_url .= 'client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
+    }
+
+    public function setDialogUrl( $account_id = null )
+    {
+        $this->_oauth->dialog_url = $this->_domain . '/c/oauth/authorize?';
+
+        if( $account_id )
+        {
+            $this->_oauth->dialog_url .= 'user_id=' . intval($account_id) . '&';
+        }
+
+        $this->_oauth->dialog_url .= 'client_id={CLIENT_ID}&redirect_uri={REDIRECT_URI}&scope={SCOPE}&state={STATE}';
+    }
+
+    public function setAccountId( $account_id )
+    {
+        $this->setRequestTokenUrl( $account_id );
+        $this->setDialogUrl( $account_id );
     }
 
     public function setRedirectUri( $uri )
@@ -86,11 +122,11 @@ class WU_API
 
     public static function parseSignedRequest()
     {
-        if( isset($_POST['signed_request']) )
+        if( isset($_REQUEST['signed_request']) )
         {
             //decode it
 
-            list($crc32, $payloadEncoded) = explode('.', $_POST['signed_request']);
+            list($crc32, $payloadEncoded) = explode('.', $_REQUEST['signed_request']);
 
             $computedCrc32 = hash('crc32', $payloadEncoded);
 
