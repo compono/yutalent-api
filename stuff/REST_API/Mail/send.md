@@ -9,6 +9,7 @@ Parameters:
  * `to` - can be a string (email address) or associative array with its key as name and its value as email address (if you are sending emails to multiple candidates use multiple rows in array)
  * `cc` - can be a string (email address) or associative array with its key as name and its value as email address (if you are sending emails to multiple candidates use multiple rows in array)
  * `bcc - can be a string (email address) or associative array with its key as name and its value as email address (if you are sending emails to multiple candidates use multiple rows in array)
+ * `reply-to` - email address to reply to
  * `subject` - subject of email
  * `body` - email body, can be in html format
  * `attachment - email attachment. Associative array, contains 2 fields: `name` and `body`. `name` - file name. `body` - base64 encoded data of file.
