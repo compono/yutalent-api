@@ -1,14 +1,14 @@
 \WU_API::registerTimelineType( $timeline_type, $timelineClass )
 ===
 
-Registers a handler class for timeline records of your plugin. Be sure to write this code in `init` area of your plugin.
+Registers a handler class for timeline records of your plugin. Be sure to write this code in the `init` area of your plugin.
 
 Parameters:
- * `$timeline_type` - type of your timeline records. Should be starting from 'plugin_'
- * `$timelineClass` - your timeline handler class. Description is given bellow here
+ * `$timeline_type` - type of your timeline records. Should be prefixed with 'plugin_'
+ * `$timelineClass` - your timeline handler class. Description is given below...
 
 Timeline class methods:
- * `init( $paramsObject )` - this is the msot important method and acts like constructor. Params for timeline get passed through `$paramsObject` object in params
+ * `init( $paramsObject )` - this is the most important method and acts like a constructor. Params for timeline get passed through `$paramsObject` object in params
  * `getImage` - timeline image (icon in the left side)
  * `getHeader` - timeline record header
  * `getSubHeader` - timeline record subheader
