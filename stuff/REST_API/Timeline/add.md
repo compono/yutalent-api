@@ -5,8 +5,8 @@ Adds a timeline record
 
 Parameters:
 
- * `type` - timeline record type, its required field and should be started from 'plugin_'.
- * any amount of other parameters, they all will be passed to timeline handler class ( For handler class look in interaction api: registerTimelineType).
+ * `type` - the timeline record type. Its a required field and should be prefixed with 'plugin_'.
+ * any amount of other parameters, they all get passed to the timeline handler class (For handler class look in the interaction api: registerTimelineType).
 
 Example:
 
