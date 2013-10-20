@@ -3,7 +3,7 @@
 
 Return parsed url params from the URL of the request.
 
-Please note that it always returns params of the current wu:talent page and doesn't track callbacks from WU APIs.
+Please note that it always returns params of the current yu:talent page and doesn't track callbacks from WU APIs.
 
 Example:
 

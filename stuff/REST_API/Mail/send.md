@@ -18,7 +18,7 @@ Example:
 
 ```
 \WU_API::apiCall('mail/send', array(
-    'from' => array( 'Vitaly Dyatlov' => 'vitaly@wutalent.co.uk' ),
+    'from' => array( 'Vitaly Dyatlov' => 'vitaly@yutalent.co.uk' ),
     'to' => array( 'Steve Walker' => 'steve@idibu.com' ),
     'cc' => array( 'Vitaly Dyatlov' => 'vitaly@idibu.com' ),
     'subject' => 'Email Example',

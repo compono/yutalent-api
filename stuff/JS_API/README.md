@@ -1,6 +1,6 @@
 Javascript API
 ===
-wu:talent also supports a JS API. This is the API which you can use in all your front-end work.
+yu:talent also supports a JS API. This is the API which you can use in all your front-end work.
 
 To use this API you have to include the latest jQuery library in the header.  
 
@@ -12,7 +12,7 @@ Then you need to include at the bottom the following code:
         //here is the user code to work with
     }
 
-    var wuDomain = 'wutalent.co.uk';
+    var wuDomain = 'yutalent.co.uk';
 
     window.wuAsyncInit = function () {
         WU.init({
@@ -56,7 +56,7 @@ Full example:
             });            
     }
         
-    var wuDomain = 'wutalent.co.uk';
+    var wuDomain = 'yutalent.co.uk';
 
     window.wuAsyncInit = function () {
         WU.init({

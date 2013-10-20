@@ -5,7 +5,7 @@ Returns the requested option from WU.
 optionName can be any string but these names are predefined:
 
 *  request - get the array of request params
-*  domain - domain of the api server (usually wutalent.co.uk)
+*  domain - domain of the api server (for example yutalent.com or yutalent.co.uk)
 *  appId - identifier of the application
 
 Example:

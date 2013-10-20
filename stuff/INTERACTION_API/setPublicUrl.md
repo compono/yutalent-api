@@ -2,7 +2,7 @@
 ===
 
 Sets plugin's public url which will be shown in iframe when user will go by this link:
-http://wutalent.co.uk/c/applications/public?appId=<application id>&params=<set of params here>
+http://yutalent.co.uk/c/applications/public?appId=<application id>&params=<set of params here>
 
 This is usually need when your plugin wants to share something.
 
