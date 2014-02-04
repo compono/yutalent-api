@@ -14,6 +14,7 @@ Timeline class methods:
  * `getSubHeader` - timeline record subheader
  * `getLinkText` - timeline record link text
  * `getLinkUrl` - timeline record link url
+ * `getNotificationTitle` - return notification title in `Add Notification` dialog
  * `getEmailText($type)` - return email template of specified type (`html` or `plain`)
 
 Example:
@@ -64,7 +65,12 @@ class timelineClass
 		return "/c/applications/public?appId=$appId&params=" . rawurlencode( $params );
 	}
 	
-	public function getEmailText($type)
+	public function getNotificationTitle()
+	{
+		return 'My Notification Title';
+	}
+	
+	public function getEmailText($type /* html or plain */)
 	{
 		return "this is my template of type <b>$type</b>";
 	}
