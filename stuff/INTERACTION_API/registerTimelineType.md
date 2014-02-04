@@ -14,6 +14,7 @@ Timeline class methods:
  * `getSubHeader` - timeline record subheader
  * `getLinkText` - timeline record link text
  * `getLinkUrl` - timeline record link url
+ * `getEmailText($type)` - return email template of specified type (`html` or `plain`)
 
 Example:
 
@@ -61,6 +62,11 @@ class timelineClass
 		$accId = \WU_API::_getAccountId();
 		$params = "id={$this->params['contact_id']}&candidate={$this->params['remote_id']}&account_id=" . $accId;
 		return "/c/applications/public?appId=$appId&params=" . rawurlencode( $params );
+	}
+	
+	public function getEmailText($type)
+	{
+		return "this is my template of type <b>$type</b>";
 	}
 }
 
