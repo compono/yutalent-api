@@ -15,6 +15,7 @@ Timeline class methods:
  * `getLinkText` - timeline record link text
  * `getLinkUrl` - timeline record link url
  * `getNotificationTitle` - return notification title in `Add Notification` dialog
+ * `getEmailSubject` - return email subject
  * `getEmailText($type)` - return email template of specified type (`html` or `plain`)
 
 Example:
@@ -68,6 +69,11 @@ class timelineClass
 	public function getNotificationTitle()
 	{
 		return 'My Notification Title';
+	}
+	
+	public function getEmailSubject()
+	{
+		return 'This is my test subject';
 	}
 	
 	public function getEmailText($type /* html or plain */)
