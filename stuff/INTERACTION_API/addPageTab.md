@@ -34,11 +34,26 @@ class pageTabClass
     
     public function popupAction()
     {
-        \WU_API::showPopup( 'Yahooch', 'http://yahoo.com' );
+        \WU_API::showPopup( 'yahooPopup' );
     }
 }
 
-\WU_API::addPageTab( $pageTabClass );
+class yahooPopup
+{
+    protected $frameUrl = 'http://yahoo.com';
+    protected $title = 'Yahooch';
+
+    public function getFrameUrl() {
+        return $this->frameUrl;
+    }
+
+    public function getTitle() {
+        return $this->title;
+    }
+}
+
+\WU_API::addPageTab( 'pageTabClass' );
+\WU_API::registerPopup( 'yahooPopup' );
 ```
 
 Then add this call somewhere in the JS API:
