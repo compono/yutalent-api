@@ -15,6 +15,9 @@ class WU_API
 
     protected $_oauth;
 
+    protected $_loginId;
+    protected $_subloginId;
+
     public function __construct()
     {
         if( !session_id() )
@@ -30,6 +33,8 @@ class WU_API
             $this->_url = $data['url'];
             $this->_token = $data['token'];
             $this->_request = $data['request'];
+            $this->_loginId = $data['login_id'];
+            $this->_subloginId = $data['sublogin_id'];
             $this->_params = $_POST + $data['params'];
 
             $this->_domain = $data['protocol'] . '://' . $data['domain'];
@@ -203,5 +208,15 @@ class WU_API
     public function getUrl()
     {
         return $this->_url;
+    }
+
+    public function getLoginId()
+    {
+        return $this->_loginId;
+    }
+
+    public function getSubloginId()
+    {
+        return $this->_subloginId;
     }
 }
