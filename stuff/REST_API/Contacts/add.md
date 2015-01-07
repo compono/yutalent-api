@@ -5,9 +5,9 @@ Adds a contact to yu:talent.
 Please notice that it doesn't check for duplicates, we expect that if you're adding a candidate - then it's someone whom you don't have yet in you database.
 
 Parameters:
- * `status_id` - status id (`statuses/list` api call), default is 'New'
- * `project_id` - project id (`projects/list` api call), required
- * `type` - category id (`contacts/categories` api call), required
+ * `status_id` - status id ([`statuses/list`](https://github.com/oneworldmarket/yutalent-api/blob/master/stuff/REST_API/Statuses/list.md) api call), default is 'New'
+ * `project_id` - project id ([`projects/list`](https://github.com/oneworldmarket/yutalent-api/blob/master/stuff/REST_API/Projects/list.md) api call), required
+ * `type` - category id ([`contacts/categories`](https://github.com/oneworldmarket/yutalent-api/blob/master/stuff/REST_API/Contacts/categories.md) api call), required
  * `data` - personal info of contact
    * `name` - first and last name (example: `Vitaly Dyatlov`), required
    * `background_info` - background information
