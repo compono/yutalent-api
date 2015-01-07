@@ -29,7 +29,7 @@ Parameters:
 Example:
 
 Restful call from Raw PHP:
-```
+```php
 $contact = array(
   'status_id' => 1,
   'project_id' => 123,
