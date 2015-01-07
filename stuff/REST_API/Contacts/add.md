@@ -52,6 +52,6 @@ $contact = array(
     'avatar' => 'base64 encoded avatar image'
   )
 );
-$data = $WU_API->sendMessageToWU( 'contacts/add', array( 'status' => 'New' ) );
+$data = $WU_API->sendMessageToWU( 'contacts/add', $contact );
 var_export( $data );
 ```
