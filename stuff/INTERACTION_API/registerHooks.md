@@ -12,7 +12,7 @@ Every hook function in the class should be written in the following format: `pub
 
 Example:
 
-```
+```php
 class linkClass
 {
     public function clickAction()
