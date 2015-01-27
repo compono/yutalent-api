@@ -9,7 +9,7 @@ This useful when you have the same code on multiple pages and want to avoid copy
 
 Example:
 
-```
+```php
 <?php
 
 \WU_API::useCode( 'people/profile-notes' );
