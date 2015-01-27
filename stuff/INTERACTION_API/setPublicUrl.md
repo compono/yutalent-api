@@ -10,7 +10,7 @@ Javascript has method for this: wu.Utils.getPublicUrl
 
 In Video Interviews plugin it was used like this:
 
-```
+```tpl
 var shareLink = wu.Utils.getPublicUrl({
                         'id': interview.interview.id,
                         'candidate': interview.candidate.id,
@@ -20,7 +20,7 @@ var shareLink = wu.Utils.getPublicUrl({
 
 Example:
 
-```
+```php
 <?php
 
 \WU_API::setPublicUrl( 'http://google.com/share' );
