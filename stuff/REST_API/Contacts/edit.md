@@ -54,7 +54,7 @@ $contact = array(
   )
 );
 $data = $WU_API->sendMessageToWU( 'contacts/edit', $contact );
-var_damp( $data );
+var_dump($data);
 ```
 
 ```php
