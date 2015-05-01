@@ -9,7 +9,7 @@ Parameters:
 
 Example:
 
-```
+```javascript
  // JS API
 
  wu.Messenger.sendMessageToWU('storage/add-multiple',{
