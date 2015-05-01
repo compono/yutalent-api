@@ -10,7 +10,7 @@ Parameters:
 
 Example:
 
-```
+```javascript
  //JS API
 
  wu.Messenger.sendMessageToWU('storage/add', {key: 'key3', value: 'my value'}, function(response){
