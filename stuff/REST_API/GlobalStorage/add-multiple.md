@@ -10,7 +10,7 @@ Parameters:
 
 Example:
 
-```
+```javascript
  // JS API
 
  wu.Messenger.sendMessageToWU('global-storage/add-multiple',{
@@ -35,7 +35,7 @@ If `append` is true, then value will be added to the previously saved one and in
 
 For example:
 
-```
+```javascript
 wu.Messenger.sendMessageToWU('global-storage/add-multiple', {append:true,pairs:{key1:value1}}, function(response){
     wu.Messenger.sendMessageToWU('global-storage/get', {key: 'key1'}, function(response){
         console.log(response);
