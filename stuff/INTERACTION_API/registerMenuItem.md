@@ -19,7 +19,7 @@ To handle events in the class you have to use functions with name `<event>Action
 
 Example:
 
-```
+```php
 <?php
 class menuClass
 {
