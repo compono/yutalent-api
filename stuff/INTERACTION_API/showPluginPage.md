@@ -5,7 +5,7 @@ Shows a previously registered (using `registerPluginPage`) plugin page.
 
 Example:
 
-```
+```php
 <?php
 
 class pluginPage1Class
