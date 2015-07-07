@@ -14,7 +14,7 @@ The class can also have custom methods which can be called from JS API in the fo
 
 Example:
 
-```
+```php
 <?php
 
 class pageTabClass
@@ -58,7 +58,7 @@ class yahooPopup
 
 Then add this call somewhere in the JS API:
 
-```
+```js
 function showYahooch() {
     WU_API.Messenger.sendMessageToWU('event/popup');
 }
